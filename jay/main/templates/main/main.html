@@ -1,0 +1,32 @@
+
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>周杰倫台中官方網站</title>
+<meta charset=utf-8>
+<link rel=stylesheet href={% static 'main/css/main.css' %}>
+</head>
+<body>
+
+<h1><a href={% url 'main:main' %}>周杰倫台中官方網站</a></h1>
+
+<table border="0"   height="25" width="1024">
+    <tbody>
+        <tr>
+            <td><a href={% url 'wiki:wiki' %}>介紹</a></td>
+            <td><a href={% url 'pic:pic' %}>圖片</td>          
+            <td><a href={% url 'album:album' %}>作品</td>
+            <td><a href={% url 'video:video' %}>影片</td>
+        </tr>
+    </tbody>
+</table>
+<h3>最新消息</h3>
+<a href="http://www.jvrmusic.com/news/news-read.asp?id=3261">周杰倫唯一專屬個人APP誕生 24小時與周杰倫約會在Jay&Me</a><br>
+<a href="http://www.jvrmusic.com/news/news-read.asp?id=3247">周杰倫在Jay&Me等你來</a><br>
+<a href="http://www.jvrmusic.com/news/news-read.asp?id=3246">周杰倫官方APP—Jay&Me即將推出</a><br>
+<a href="http://www.jvrmusic.com/news/news-read.asp?id=3244">周董「怎麼了」？ 冒生命危險取景英國「白色懸崖」</a><br>
+<a href="http://www.jvrmusic.com/news/news-read.asp?id=3240">周杰倫帥氣對嘴「聽爸爸的話」 MV放手給杜哥跨行執導 成果不俗</a><br>
+<p>{{time}}</p>
+</body>
+</html>

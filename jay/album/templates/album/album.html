@@ -1,0 +1,28 @@
+
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>周杰倫台中官方網站</title>
+<meta charset=utf-8>
+<link rel=stylesheet href={% static 'main/css/main.css' %}>
+</head>
+<body>
+
+<h1><a href={% url 'main:main' %}>周杰倫台中官方網站</a></h1>
+
+<table border="0"   height="25" width="1024">
+    <tbody>
+        <tr>
+            <td><a href={% url 'wiki:wiki' %}>介紹</a></td>
+            <td><a href={% url 'pic:pic' %}>圖片</td>          
+            <td>作品</td>
+            <td><a href={% url 'video:video' %}>影片</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>個人專輯</h3>
+
+</body>
+</html>

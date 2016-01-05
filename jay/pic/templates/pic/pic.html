@@ -1,0 +1,37 @@
+
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>周杰倫台中官方網站</title>
+<meta charset=utf-8>
+<link rel=stylesheet href={% static 'main/css/main.css' %}>
+</head>
+<body>
+
+<h1><a href={% url 'main:main' %}>周杰倫台中官方網站</a></h1>
+
+<table border="0"   height="25" width="1024">
+    <tbody>
+        <tr>
+            <td><a href={% url 'wiki:wiki' %}>介紹</a></td>
+            <td>圖片</td>          
+            <td><a href={% url 'album:album' %}>作品</td>
+            <td><a href={% url 'video:video' %}>影片</td>
+        </tr>
+    </tbody>
+</table>
+
+<img src={% static 'pic/img/Jay 42.jpg' %}  width=45%>
+<img src={% static 'pic/img/Jay 43.jpg' %}  width=45%><br>
+<img src={% static 'pic/img/Jay 44.jpg' %}  width=45%>
+<img src={% static 'pic/img/Jay 53.jpg' %}  width=45%>
+<img src={% static 'pic/img/Jay 48.jpg' %}  width=45%>
+<img src={% static 'pic/img/Jay 49.jpg' %}  width=45%><br>
+<img src={% static 'pic/img/Jay 45.jpg' %}  width=45%>
+<img src={% static 'pic/img/Jay 46.jpg' %}  width=45%>
+<img src={% static 'pic/img/Jay 47.jpg' %}  width=45%>
+<img src={% static 'pic/img/Jay 56.jpg' %}  width=45%>
+
+</body>
+</html>

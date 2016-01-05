@@ -1,0 +1,55 @@
+
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>周杰倫台中官方網站</title>
+<meta charset=utf-8>
+<link rel=stylesheet href={% static 'main/css/main.css' %}>
+</head>
+<body>
+
+<h1><a href={% url 'main:main' %}>周杰倫台中官方網站</a></h1>
+
+<table border="0"   height="25" width="1024">
+    <tbody>
+        <tr>
+            <td>介紹</a></td>
+            <td><a href={% url 'pic:pic' %}>圖片</td>          
+            <td><a href={% url 'album:album' %}>作品</td>
+            <td><a href={% url 'video:video' %}>影片</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<img src={% static 'pic/img/Jay 08.jpg' %}  width=30%><br>
+姓名：周杰倫<br>
+英文名：Jay<br>
+綽號：周董<br>
+生日：１９７９／１／１８<br>
+星座：魔羯座<br>
+血型：O型<br>
+生肖：馬<br>
+學歷：淡江中學音樂科<br>
+在學校主修科目：鋼琴<br>
+出生地：台灣<br>
+身高：１７５cm<br>
+體重：６０kg<br>
+專長：音樂創作、打球、變魔術<br>
+口頭禪：屌不屌、瞎啦<br>
+收藏品：古董家俱、古董燈、球鞋、帽子、各種樂器、屌車<br>
+休閒嗜好：打籃球<br>
+專精樂器：鋼琴、大提琴、吉他、爵士鼓<br>
+最欣賞的藝人：李連杰、周潤發<br>
+最愛的曲風：中國風、R&B<br>
+最討厭的事：被狗仔貼身跟拍<br>
+最尊敬的人：葉惠美女士<br>
+最愛的菜餚：雞腿便當、牛排、蕃茄炒蛋<br>
+做過最爽快的事：成功甩掉狗仔<br>
+最喜歡的運動：籃球<br>
+他的最痛：僵直性脊椎炎<br>
+最苦惱的事：想做的事越來越多 但時間永遠都不夠 <br>
+
+
+</body>
+</html>
