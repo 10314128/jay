@@ -1,0 +1,29 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>周杰倫個人專輯</title>
+<meta charset=utf-8>
+<link rel=stylesheet href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+{% if category %}
+<h1>{{category.name}}</h1>
+{% if pages %}
+<table>
+<tr><th>頁面標題</th></tr>
+{% for page in pages %}
+<td><a href={{page.url}}>{{page.title}}</a></td>
+{% endfor %}
+</ul>
+{% else %}
+<p><strong>此類別目前並無頁面。</strong></p>
+{% endif %}
+<p><a href={% url 'album:addPage' category.name %}>新增頁面</a></p>
+{% else %}
+<p>所指定的類別「{{categoryName}}」不存在。</p>
+{% endif %}
+
+<p><a href={% url 'album:album' %}>回個人專輯</a></p>
+</body>
+</html>

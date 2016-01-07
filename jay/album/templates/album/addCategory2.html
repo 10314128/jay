@@ -1,0 +1,17 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>周杰倫台中官方網站</title>
+<meta charset=utf-8>
+<link rel=stylesheet href={% static 'main/css/main.css' %}>
+</head>
+<body>
+<h1>在"{{category.name}}"專輯中新增一首歌</h1>
+<form method=post action={% url 'album:addPage' category.name %}>
+{% csrf_token %}
+{{form.as_p}}
+<input type=submit value=送出>
+</form>
+</body>
+</html>
