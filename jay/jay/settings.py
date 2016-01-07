@@ -25,6 +25,16 @@ SECRET_KEY = '!(7j90qr**8lqphaci@y4$*5yd^rz5x#=ea&y-325kgm$v!_+&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+if 'DYNO' not in os.environ:
+    DEBUG = True
+else:
+# Running on Heroku
+    DEBUG = False
+
+
+
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -79,16 +89,29 @@ WSGI_APPLICATION = 'jay.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'jayDB',
-    'USER': 'jay',
-    'PASSWORD': 'xxxxxxxx',
-    'HOST': 'localhost',
-    'PORT': '',
+
+if DEBUG==True: # Running on the development environment
+
+
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'jayDB',
+        'USER': 'jay',
+        'PASSWORD': 'xxxxxxxx',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
+
+else: # Running on Heroku
+    # Parse database configuration from $DATABASE_URL
+    import dj_database_url
+    DATABASES = {'default':dj_database_url.config()}
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 
 # Password validation
@@ -128,3 +151,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+if DEBUG==False: # Running on Heroku
+    STATIC_ROOT = 'staticfiles'

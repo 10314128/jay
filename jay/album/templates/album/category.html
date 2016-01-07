@@ -11,17 +11,21 @@
 <h1>{{category.name}}</h1>
 {% if pages %}
 <table>
-<tr><th>頁面標題</th></tr>
+<tr><th>歌曲</th></tr>
 {% for page in pages %}
-<td><a href={{page.url}}>{{page.title}}</a></td>
+
+<tr><td><a href={{page.url}}>{{page.title}}</a></td></tr>
+
 {% endfor %}
 </ul>
+</table>
 {% else %}
 <p><strong>此類別目前並無頁面。</strong></p>
 {% endif %}
-<p><a href={% url 'album:addPage' category.name %}>新增頁面</a></p>
+<p><a href={% url 'album:addPage' category.name %}>新增歌曲</a></p>
 {% else %}
 <p>所指定的類別「{{categoryName}}」不存在。</p>
+
 {% endif %}
 
 <p><a href={% url 'album:album' %}>回個人專輯</a></p>
