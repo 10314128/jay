@@ -23,7 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(7j90qr**8lqphaci@y4$*5yd^rz5x#=ea&y-325kgm$v!_+&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 
 if 'DYNO' not in os.environ:
